@@ -24,7 +24,8 @@
     "@sentry/react-native": "4.9.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "dotenv": "16.0.3"
   },
   "private": true
 }
