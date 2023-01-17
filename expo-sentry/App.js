@@ -7,9 +7,6 @@ const extra = Constants.expoConfig.extra;
 const DSN = extra.DSN;
 const USER = extra.USER;
 const OS = Platform.OS;
-const native = Sentry.Native;
-const browser = Sentry.Browser;
-const sentry = native || browser;
 
 Sentry.init({
   dsn: DSN,
@@ -40,5 +37,7 @@ const styles = StyleSheet.create({
   },
 });
 
-sentry.captureMessage('Starting up the app for ' + USER);
+const sentry = OS == 'web' ? Sentry.Browser : Sentry.Native;
+
+sentry.captureMessage('Starting up the app for ' + USER + ' on ' + OS);
 sentry.wrap(App);
