@@ -1,10 +1,10 @@
-import "dotenv/config";
-
 const buildNumber = 1;
-const appName = "expo-sentry";
 
-module.exports = () => {
+module.exports = ({ config }) => {
+  console.log(config);
+  const appName = config.name;
   return {
+    ...config,
     name: appName,
     plugins: ["sentry-expo"],
     slug: appName,
@@ -22,6 +22,7 @@ module.exports = () => {
     assetBundlePatterns: ["**/*"],
     extra: {
         DSN: process.env.SENTRY_DSN,
+        USER: process.env.USER
     },
     ios: {
       bundleIdentifier: "expo-sentry",
