@@ -7,6 +7,10 @@ in an [Expo](https://expo.dev/home) app. To use it you will need to:
 - Create a Sentry account
 - Put the needed Sentry keys in `.envrc`.
 
+# Installation
+- Make sure npm is installed
+- `npm install` to install package.json packages 
+
 # App Startup
 `npx expo start`
 
@@ -30,11 +34,11 @@ This app was created using resources from the Expo site.
 # Config / Where to put the keys
 This is the thorniest issue about using Sentry.
 Even if your app is completely open source, you will want to keep your auth token private.
-Unfortunately, the current Expo has bugs that make it inadequate alone. 
+There are security and other reasons to pass your keys as environment variables rather than check them into source control.
+
 [Expo configuration](https://docs.expo.dev/workflow/configuration/) can be put in app.json or app.config.js.
 - app.json is designed to hold static config information. An extra build step is needed to make dynamic.
 - app.config.js is designed to support dynamic config information.
-- exp.json support was [removed in 2020](https://github.com/expo/expo-cli/blob/c56fb82515eb5c2598ab75e37bbff3372f69f7e8/CHANGELOG.md#-breaking-changes-68)
 
 # Dynamic config info
 [direnv](https://direnv.net/)
