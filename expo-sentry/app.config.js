@@ -25,7 +25,7 @@ module.exports = ({ config }) => {
         USER: process.env.USER
     },
     ios: {
-      bundleIdentifier: "expo-sentry",
+      bundleIdentifier: appName,
       supportsTablet: true,
       buildNumber: buildNumber.toString(),
     },
@@ -44,9 +44,9 @@ module.exports = ({ config }) => {
         {
           file: "sentry-expo/upload-sourcemaps",
           config: {
-            organization: process.env.SENTRY_Organization,
-            project: process.env.SENTRY_Project,
-            authToken: process.env.SENTRY_AuthToken,
+            organization: process.env.SENTRY_ORG,
+            project: process.env.SENTRY_PROJECT,
+            authToken: process.env.SENTRY_AUTH_TOKEN,
           },
         },
       ],
