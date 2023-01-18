@@ -20,7 +20,6 @@ export default function App() {
     <View style={styles.container}>
       <Text>Expo Sentry</Text>
       <Text>{OS}</Text>
-      <Text>{sentry['SDK_NAME']}</Text>
       <Text>{USER}</Text>
       <Text>{DSN}</Text>
       <StatusBar style="auto" />
